@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment/>
+    <entry key="findAtCategoryCode">
+        SELECT
+            category_code,
+            category_name,
+            ref_category_code
+        FROM
+            tbl_category
+        WHERE
+            category_code = ?
+    </entry>
+    <entry key="findAtRefCategoryCode">
+        SELECT
+            category_code,
+            category_name,
+            ref_category_code
+        FROM
+            tbl_category
+        WHERE
+            ref_category_code = ?
+    </entry>
+    <entry key="insertCategory">
+        INSERT INTO
+            tbl_category(category_name, ref_category_code)
+        VALUES
+            (?,?)
+    </entry>
+    <entry key="updateCategory">
+        UPDATE
+            tbl_category
+        SET
+            category_name = ?,
+            ref_category_code = ?
+        WHERE
+            category_code = ?
+    </entry>
+    <entry key="deleteCategory">
+        DELETE FROM
+            tbl_category
+        WHERE
+            category_code = ?
+    </entry>
+</properties>
